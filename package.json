@@ -1,4 +1,5 @@
 {
+  "homepage": "https://gonzod.github.io/auto-demo",
   "name": "front-demo",
   "version": "0.1.0",
   "private": true,
@@ -17,6 +18,8 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "node server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -43,6 +46,7 @@
   "devDependencies": {
     "express": "^4.17.1",
     "express-favicon": "^2.0.1",
+    "gh-pages": "^3.2.3",
     "path": "^0.12.7"
   }
 }
