@@ -6,11 +6,15 @@ import FeatureBlock from '../FeatureBlock';
 const useStyles = makeStyles(() => ({
     root: {
         background: '#1b2957CC',
-        paddingTop: '13px',
+        padding: '4% 0',
     },
     header: {
         marginBottom: '14px',
         textAlign: 'center',
+        color: '#30D171',
+        fontWeight: 600,
+        fontFamily: 'Poppins',
+        fontStyle: 'normal',
     },
     featureBlock: {
         display: 'flex',

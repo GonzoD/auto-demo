@@ -1,22 +1,23 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AboutUsCircleInfo from '../AboutUsCircleInfo';
+import { useMediaQuery } from 'react-responsive'
 
 const useStyles = makeStyles(() => ({
     root: {
         background: '#1b2957CC',
-        width: '400px',
-        height: '150px',
-        marginLeft: '45%',
+        marginLeft: '50%',
         position: 'absolute',
-        marginTop: '-5%',
     },
+    rootBigScreen: {marginTop: '-5%',},
+    rootMobile: {marginTop: '-20%',}
 }));
 
 const AboutUsBox = () => {
     const classes = useStyles()
+    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
 
-    return <div className={classes.root}>
+    return <div className={`${classes.root} ${isTabletOrMobile ? classes.rootMobile : classes.rootBigScreen}`}>
         <AboutUsCircleInfo amount='10 лет' info='опыта автоинсруктора'/>
     </div>
 }

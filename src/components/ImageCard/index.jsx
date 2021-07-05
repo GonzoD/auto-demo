@@ -7,10 +7,14 @@ const useStyles = makeStyles(() => ({
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        width: '300px'
+        maxWidth: '300px'
     },
     text: {
-        textAlign: 'center'
+        textAlign: 'center',
+        color: '#30D171',
+        fontWeight: 600,
+        fontFamily: 'Poppins',
+        fontStyle: 'normal',
     },
 }));
 

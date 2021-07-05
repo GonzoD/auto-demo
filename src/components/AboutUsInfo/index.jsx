@@ -1,25 +1,30 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography } from '@material-ui/core';
+import { useMediaQuery } from 'react-responsive'
 
 const useStyles = makeStyles(() => ({
     root: {
         marginLeft: '10%',
-        backgroundColor: 'white',
-        width: '600px',
+        backgroundColor: '#FFFFFFCC',
+        width: '50%',
     },
     header: {
-        fontSize: '25px',
         marginBottom: '14px'
     },
+    headerBigScreen: {fontSize: '25px'},
+    headerMobile: {fontSize: '15px'},
+    infoBigScreen: {fontSize: '20px'},
+    infoMobile: {fontSize: '10px'}
 }));
 
 const AboutUsInfo = () => {
     const classes = useStyles()
+    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
 
     return <div className={classes.root}>
-        <Typography className={classes.header}>Обо мне</Typography>
-        <Typography className={classes.info}>
+        <Typography className={`${classes.header} ${isTabletOrMobile?classes.headerMobile:classes.headerBigScreen}`}>Обо мне</Typography>
+        <Typography className={`${isTabletOrMobile ? classes.infoMobile: classes.infoBigScreen}`}>
         Я занимаюсь обучением будущих водителей более 10 лет. Разработал уникальную программу, которая позволяет научиться водить каждому! 
         Провожу профессиональные занятия для автолюбителей с любым уровнем подготовки на комфортабельном автомобиле Toyota Camry.
         Уроки проходят в доброжелательной обстановке. 

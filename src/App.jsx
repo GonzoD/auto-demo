@@ -11,19 +11,29 @@ import Contacts from './components/Contacts';
 
 const useStyles = makeStyles(() => ({
   root: {
-      backgroundImage: 'url(background.jpg)',
-      backgroundRepeat: 'repeat',
+      background: '#1C2128',
+      '& header.MuiAppBar-root': {
+        width: '100%',
+        jystifyContent: 'center'
+      },
+      '& header.MuiAppBar-positionFixed': {
+        right: 'auto',
+      },
+      '& header.MuiPaper-elevation4': {
+        boxShadow: 'unset'
+      }
   },
   introBack: {
-    padding: '40px 150px 0 150px',
-    backgroundImage: 'url(backcar.jpeg)',
+    padding: '2% 10% 0 10%',
+    background: '#20262E',
     opacity: 0.85,
   },
   intro: {
-    marginBottom: '60px',
+    marginBottom: '2%',
   },
   content: {
-    margin: '0 150px',
+    margin: '0 10%',
+    background: '#20262E',
   }
 }));
 
@@ -32,11 +42,9 @@ function App() {
   return (
     <div className={classes.root}>
       <AppBar />
-      <div className={classes.introBack}>
+      <div className={classes.content}>
       <Introduction className={classes.intro}/>
       <BestFeatures />
-      </div>
-      <div className={classes.content}>
         <AboutUs />
         <Program />
         <ContactAd />

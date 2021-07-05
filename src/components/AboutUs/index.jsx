@@ -5,7 +5,7 @@ import AboutUsBox from '../AboutUsBox';
 
 const useStyles = makeStyles(() => ({
     root: {
-        height: '600px',
+        padding: '10% 0',
         backgroundImage: 'url(carsandsea.jpg)',
         backgroundSize: 'cover',
     }
