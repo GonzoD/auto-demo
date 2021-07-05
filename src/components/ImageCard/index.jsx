@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography } from '@material-ui/core';
+import { useMediaQuery } from 'react-responsive'
 
 const useStyles = makeStyles(() => ({
     root: {
@@ -16,13 +17,17 @@ const useStyles = makeStyles(() => ({
         fontFamily: 'Poppins',
         fontStyle: 'normal',
     },
+    img: {
+        height: '40%'
+    }
 }));
 
 const ImageCard = (props) => {
     const classes = useStyles()
+    const isTabletOrMobile = useMediaQuery({query: '(max-width: 1224px)'})
 
     return <div className={`${classes.root} ${props.className}`}>
-        <img className={classes.img} src={props.img} alt="imh" />
+        <img className={`${isTabletOrMobile && classes.img}`} src={props.img} alt="imh" />
         <Typography className={classes.text}>{props.textImg}</Typography>
     </div>
 }
