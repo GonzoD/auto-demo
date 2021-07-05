@@ -18,7 +18,7 @@ const useStyles = makeStyles(() => ({
         fontStyle: 'normal',
     },
     img: {
-        height: '40%'
+        height: '400px'
     }
 }));
 
